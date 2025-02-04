@@ -6,16 +6,20 @@ document.getElementById('add').removeAttribute('disabled');
 
 function agregarAmigo(){
     let amigo = document.getElementById('amigo').value;
-    console.log(typeof amigo);
-    if (amigo === '') {
-        alert('Por favor, inserte un nombre.');
+    if(!/^[a-z á é í ó ú]*$/gi.test(amigo)){
+        alert('Por favor, solo ingrese letras.');
         return;
     }else{
-        if (listaAmigos.includes(amigo)) {
-            alert(`El amigo ${amigo} ya se encuentra en la lista`);
+        if (amigo === '') {
+            alert('Por favor, inserte un nombre.');
+            return;
         }else{
-            listaAmigos.push(amigo);
-            asignarTextoElemento('#listaAmigos', `${amigo}\n`);
+            if (listaAmigos.includes(amigo)) {
+                alert(`El amigo ${amigo} ya se encuentra en la lista`);
+            }else{
+                listaAmigos.push(amigo);
+                asignarTextoElemento('#listaAmigos', `${amigo}\n`);
+            }
         }
     }
     limpiarCaja();
