@@ -25,11 +25,7 @@ function agregarAmigo(){
 
 //Función que sortea un amigo secreto de la lista de amigos y lo muestra por pantalla.
 function sortearAmigo(){
-<<<<<<< HEAD
-    asignarTextoElemento('#resultado', '');
     if(listaAmigos.length !=0) {
-=======
->>>>>>> d08a59ec8068b2f6a35690cfa28aa2470ca9fae2
     document.querySelector('#add').setAttribute('disabled','true');
     let amigoSorteado =  Math.floor(Math.random()*listaAmigos.length);
     asignarTextoElemento('#resultado', `El amigo secreto sorteado es: ${listaAmigos[amigoSorteado]}`);
